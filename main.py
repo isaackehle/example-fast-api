@@ -1,16 +1,14 @@
 import uvicorn
-from fastapi import APIRouter, FastAPI
-from routers.orders import orderRouter
+from fastapi import FastAPI
+from routers.orders import router
 
 app = FastAPI()
-router = APIRouter()
 
 
-app.include_router(orderRouter)
 app.include_router(router)
 
 
-@router.get("/")
+@app.get("/api")
 async def read_root():
     return {"message": "Hello World"}
 

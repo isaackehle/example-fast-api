@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel
 
 
@@ -11,6 +9,9 @@ class Order(BaseModel):
     reason_for_purchase: str
 
 
-# Partial update model
-class NewOrder(Order):
-    id: Optional[int] = 0
+# Partial update model for creating orders (id will be auto-generated)
+class NewOrder(BaseModel):
+    name: str
+    description: str
+    cost: float
+    reason_for_purchase: str

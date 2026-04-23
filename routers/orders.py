@@ -1,23 +1,24 @@
 from models.orders import NewOrder, Order
 from fastapi import APIRouter
 
-orderRouter = APIRouter(
-    prefix="/orders",
+router = APIRouter(
+    prefix="/api/orders",
     tags=["orders"],
     dependencies=[],
     responses={404: {"description": "Not found"}},
 )
 
-orders: Order[list] = []
+orders: list[Order] = []
+
 last_order_id = 0
 
 
-@orderRouter.get("/")
+@router.get("/")
 def read_items():
     return orders
 
 
-@orderRouter.get("/{item_id}")
+@router.get("/{item_id}")
 def read_item(item_id: int):
     global orders
 
@@ -32,7 +33,7 @@ def read_item(item_id: int):
         return {"success": "false"}
 
 
-@orderRouter.post("/")
+@router.post("/")
 def create_item(new_order: NewOrder):
     global last_order_id, orders
     order: Order = Order(**new_order.dict())
