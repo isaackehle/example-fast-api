@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "writing-plans": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "bfaed11054ad8021c66860244e2d2e0d1eca483ae9f5fbfcb956e99c61f5c3d7"
+    }
+  }
+}
