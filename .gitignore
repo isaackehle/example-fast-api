@@ -209,3 +209,18 @@ __marimo__/
 # pnpm, npm
 node_modules/
 */node_modules/
+
+!frontend/lib
+!frontend/lib/*
+frontend/.next/dev/build-manifest.json
+frontend/.next/dev/fallback-build-manifest.json
+frontend/.next/dev/lock
+frontend/.next/dev/package.json
+frontend/.next/dev/prerender-manifest.json
+frontend/.next/dev/routes-manifest.json
+frontend/.next/dev/trace
+frontend/.next/dev/cache/.rscinfo
+frontend/.next/dev/cache/*
+frontend/.next/dev/server/*
+frontend/.next/dev/static/*
+frontend/.next/dev/types/*
